@@ -21,10 +21,10 @@ variables:
 
 stages:
 - stage: Build
-  displayName: Build and push docker image
+  displayName: Build and push
   jobs:  
   - job: Build
-    displayName: Build
+    displayName: Build and push docker image
     pool:
       vmImage: $(vmImageName)
     steps:
@@ -38,10 +38,10 @@ stages:
         tags: |
           $(tag)
 - stage: Deploy
-  displayName: Deploy to https://mwcloud64.azurewebsites.net/
+  displayName: Deploy
   jobs:
   - job: Deploy
-    displayName: Deploy
+    displayName: Deploy to https://mwcloud64.azurewebsites.net/
     pool:
       vmImage: $(vmImageName)
     steps:
