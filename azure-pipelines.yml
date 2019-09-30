@@ -40,6 +40,11 @@ stages:
 - stage: Deploy
   displayName: Deploy to https://mwcloud64.azurewebsites.net/
   jobs:
+  - job: Deploy
+    displayName: Deploy
+    pool:
+      vmImage: $(vmImageName)
+    steps:
     - task: AzureWebAppContainer@1
       displayName: Configure Web App with new container image
       inputs:
