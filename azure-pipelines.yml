@@ -10,9 +10,9 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'ethomsondemo-acr'
+  dockerRegistryServiceConnection: 'martinwoodward-acr'
   imageRepository: 'hello64'
-  containerRegistry: 'ethomsondemo.azurecr.io'
+  containerRegistry: 'martinwoodward.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
   
@@ -40,6 +40,6 @@ stages:
     - task: AzureWebAppContainer@1
       displayName: Configure Web App with new container image
       inputs:
-        azureSubscription: 'Azure DevOps Community Demo(1a1d858c-e6fb-4704-bdba-70f24b3044c0)'
-        appName: 'cloud64'
+        azureSubscription: 'martinwo Dev Environment(d77f3677-ce54-4e48-b5ed-44338ad69742)'
+        appName: 'mwcloud64'
         containers: '$(containerRegistry)/$(imageRepository):$(tag)'
