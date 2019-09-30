@@ -21,7 +21,7 @@ variables:
 
 stages:
 - stage: Build
-  displayName: Build and push stage
+  displayName: Build and push docker image
   jobs:  
   - job: Build
     displayName: Build
@@ -37,6 +37,9 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+- stage: Deploy
+  displayName: Deploy to https://mwcloud64.azurewebsites.net/
+  jobs:
     - task: AzureWebAppContainer@1
       displayName: Configure Web App with new container image
       inputs:
