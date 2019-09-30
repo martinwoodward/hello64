@@ -14,7 +14,7 @@ jsr $e544
   jsr .write_line
   jmp .loop
 
-; the text to write
+; the text to write                                     .
 message   !scr "               hello world!             "
 
 .write_line
