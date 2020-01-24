@@ -15,7 +15,7 @@ jsr $e544
   jmp .loop
 
 ; the text to write                                     .
-message   !scr "               hello Jim!               "
+message   !scr "             hello world                "
 
 .write_line
   ldx #$00
